@@ -33,6 +33,7 @@ build() {
 		git checkout curl-${stripped_version}
 		cmake -DCMAKE_BUILD_TYPE=${build_type} \
 			-DHTTP_ONLY=ON \
+			-DCPPFLAG_CURL_STATICLIB="-fPIC" \
 			-DBUILD_SHARED_LIBS=OFF \
 			-DCMAKE_INSTALL_PREFIX=INSTALL \
 			../
